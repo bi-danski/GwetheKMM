@@ -6,10 +6,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.rememberWindowState
-import org.me2you.gwethekmm.ui.screens.JvmHomeScreen
-//import cafe.adriel.voyager.navigator.Navigator
-//import cafe.adriel.voyager.transitions.SlideTransition
-//import org.me2you.gwethekmm.navigation.SplashScreen
 import org.me2you.gwethekmm.ui.theme.DarkColors
 
 fun main() = application {
@@ -28,10 +24,7 @@ fun main() = application {
 
     ) {
         MaterialTheme(colorScheme = DarkColors) {
-//            Navigator(SplashScreen){ navigator ->
-//                SlideTransition(navigator)
-//            }
-            JvmHomeScreen()
+            App()
         }
     }
 }

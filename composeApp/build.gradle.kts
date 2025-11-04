@@ -56,11 +56,12 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-//            implementation(libs.navigation.compose)
-//            implementation(libs.koin.core)
-//            implementation(libs.voyager.koin)
-//            implementation(libs.voyager.transitions)
-//            implementation(libs.koin.core)
+            implementation(libs.voyager.koin)
+            implementation(libs.voyager.navigator)
+            implementation(libs.voyager.transitions)
+            implementation(libs.voyager.tabNavigator)
+            implementation(libs.voyager.screenModel)
+            implementation(libs.voyager.bottomSheetNavigator)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
