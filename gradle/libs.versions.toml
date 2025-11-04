@@ -19,6 +19,7 @@ material-icons = "1.7.8"
 navCompose = "2.9.5"
 #koin = "3.5.3"
 #voyager = "1.0.0-rc08"
+voyager = "1.1.0-beta03"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
