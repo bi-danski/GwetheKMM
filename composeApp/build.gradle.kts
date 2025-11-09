@@ -52,6 +52,7 @@ kotlin {
             implementation(compose.material3)
             implementation(compose.materialIconsExtended)
             implementation(compose.ui)
+//            implementation(libs.coil.compose)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
@@ -59,8 +60,8 @@ kotlin {
             implementation(libs.voyager.koin)
             implementation(libs.voyager.navigator)
             implementation(libs.voyager.transitions)
-            implementation(libs.voyager.tabNavigator)
             implementation(libs.voyager.screenModel)
+            implementation(libs.voyager.tabNavigator)
             implementation(libs.voyager.bottomSheetNavigator)
         }
         commonTest.dependencies {

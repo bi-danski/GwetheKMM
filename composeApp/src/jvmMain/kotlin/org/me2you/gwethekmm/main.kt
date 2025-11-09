@@ -10,7 +10,7 @@ import org.me2you.gwethekmm.ui.theme.DarkColors
 
 fun main() = application {
     val windowState = rememberWindowState(
-        width = 1200.dp,
+        width = 1000.dp,
         height = 800.dp,
         placement = WindowPlacement.Floating
     )

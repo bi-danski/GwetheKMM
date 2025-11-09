@@ -4,12 +4,19 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.jetbrains.compose.ui.tooling.preview.Preview
+import org.me2you.gwethekmm.getPlatform
 import org.me2you.gwethekmm.ui.components.startscreen.GradientPillButton
 import org.me2you.gwethekmm.ui.components.startscreen.NeuralGlow
 import org.me2you.gwethekmm.ui.components.startscreen.TopAppBar
@@ -17,6 +24,12 @@ import org.me2you.gwethekmm.ui.theme.AccentG
 
 @Composable
 fun CStartScreen(onGetStarted: () -> Unit) {
+    var lannister by remember { mutableStateOf(getPlatform().name) }
+    var plat_form by remember { mutableStateOf(true) }
+
+    if (lannister.contains("ios") || lannister.contains("android")){
+        plat_form = false
+    }
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -44,7 +57,6 @@ fun CStartScreen(onGetStarted: () -> Unit) {
                     .padding(bottom = 80.dp)
 //                    .background(MaterialTheme.colorScheme.background)
             )
-
         }
         Spacer(modifier = Modifier.height(32.dp))
         Column(
@@ -56,12 +68,14 @@ fun CStartScreen(onGetStarted: () -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Elevate your thinking",
+                text = if (plat_form) "Elevate your thinking" else "Elevate your\n\nthinking",
                 fontSize = 44.sp,
                 fontWeight = FontWeight.ExtraBold,
+                fontStyle = FontStyle.Italic,
                 color = AccentG,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.padding(horizontal = 8.dp)
+                modifier = Modifier
+                    .padding(horizontal = 8.dp)
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -80,12 +94,15 @@ fun CStartScreen(onGetStarted: () -> Unit) {
                 .fillMaxWidth()
                 .align(Alignment.BottomEnd)
                 .padding(horizontal = 28.dp, vertical = 36.dp),
-            horizontalAlignment = Alignment.End
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             GradientPillButton(
                 label = "Get Started",
                 onClick = onGetStarted ,
-                modifier = Modifier.height(58.dp)
+                modifier = Modifier
+                    .height(58.dp)
+                    .fillMaxWidth(if (plat_form) 0.65f else 1f ),
+
             )
 
 //            Spacer(modifier = Modifier.height(10.dp))
@@ -93,7 +110,9 @@ fun CStartScreen(onGetStarted: () -> Unit) {
             GradientPillButton(
                 label = "Sign In",
                 onClick = {},
-                modifier = Modifier.height(58.dp)
+                modifier = Modifier
+                    .height(58.dp)
+                    .fillMaxWidth(if (plat_form) 0.65f else 1f )
             )
         }
 
@@ -105,4 +124,10 @@ fun CStartScreen(onGetStarted: () -> Unit) {
     }
 }
 
-
+@Preview
+@Composable
+fun SPlashPreview(){
+    MaterialTheme {
+        CStartScreen(onGetStarted = {})
+    }
+}
