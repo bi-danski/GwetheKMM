@@ -12,10 +12,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.me2you.gwethekmm.ui.components.homescreen.GwetheBottomNav
 import org.me2you.gwethekmm.ui.components.homescreen.GwetheProductGrid
 import org.me2you.gwethekmm.ui.components.homescreen.GwetheTopBar
-import org.me2you.gwethekmm.ui.theme.AccentG
+import org.me2you.gwethekmm.ui.theme.GwetheKMMTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -47,7 +48,7 @@ fun CHomeScreen(
             modifier = modifier
                 .fillMaxSize()
                 .padding(padding)
-                .verticalScroll(rememberScrollState()) // ✅ unified scroll on desktop + Android
+                .verticalScroll(rememberScrollState())
                 .padding(16.dp)
         ) {
             Spacer(modifier = Modifier.height(12.dp))
@@ -74,7 +75,7 @@ fun CHomeScreen(
 
             Text(
                 text = "Tools",
-                color = AccentG,
+                color = MaterialTheme.colorScheme.primary,
                 fontSize = 32.sp,
                 style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                 modifier = Modifier.padding(bottom = 8.dp)
@@ -82,5 +83,20 @@ fun CHomeScreen(
 
             GwetheProductGrid(products = toolProducts)
         }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewHomeScreen(){
+    GwetheKMMTheme {
+        CHomeScreen(
+            {},
+            {},
+            {},
+            modifier = Modifier
+
+
+        )
     }
 }

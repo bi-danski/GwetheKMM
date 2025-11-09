@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.me2you.gwethekmm.ui.theme.AccentA
 import org.me2you.gwethekmm.ui.theme.AccentX
+import org.me2you.gwethekmm.ui.theme.SoftLav
 
 @Composable
 fun ProfileHeader(profileName: String, profileNumber: String){
@@ -21,7 +22,6 @@ fun ProfileHeader(profileName: String, profileNumber: String){
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
             .fillMaxWidth()
-//            .height(250.dp)
             .padding(20.dp)
     ) {
         Icon(
@@ -43,8 +43,9 @@ fun ProfileHeader(profileName: String, profileNumber: String){
 
         Text(
             text = profileNumber,
-            color = AccentA,
-            fontSize = 18.sp
+            color = SoftLav,
+            fontSize = 18.sp,
+            fontWeight = FontWeight.Bold
         )
     }
 }

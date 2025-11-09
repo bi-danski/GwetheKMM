@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.me2you.gwethekmm.ui.components.profilescreen.CustomProfileMenuItem
 import org.me2you.gwethekmm.ui.components.profilescreen.ProfileHeader
+import org.me2you.gwethekmm.ui.theme.AccentA
 import org.me2you.gwethekmm.ui.theme.AccentG
-import org.me2you.gwethekmm.ui.theme.SoftLav
 
 
 @Composable
@@ -42,18 +42,18 @@ fun CProfileScreen(
                 modifier = Modifier
                     .fillMaxSize(),
                 colors = CardDefaults.cardColors(containerColor = colorScheme.background),
-                elevation = CardDefaults.cardElevation(8.dp)
+                elevation = CardDefaults.cardElevation(10.dp)
             ) {
                 Column(modifier = Modifier.padding(20.dp)) {
                     Text(
                         text = "Account Overview",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
-                        color = SoftLav
+                        color = AccentA
                     )
                     Spacer(modifier = Modifier.height(20.dp))
                     CustomProfileMenuItem(icon = Icons.Default.Person, title = "Personal Information", onClick = {}, iconColor = AccentG)
-                    CustomProfileMenuItem(icon = Icons.AutoMirrored.Filled.List, title = "My Medical History", onClick = {}, AccentG)
+                    CustomProfileMenuItem(icon = Icons.AutoMirrored.Filled.List, title = "My Purchase History", onClick = {}, AccentG)
                     CustomProfileMenuItem(icon = Icons.Default.Lock, title = "Change Password", onClick = {}, iconColor = AccentG)
                     CustomProfileMenuItem(icon = Icons.Default.Language, title = "Change Language", onClick = {}, iconColor = AccentG)
                     CustomProfileMenuItem(icon = Icons.Default.Delete, title = "Delete My Account", onClick = {}, iconColor = AccentG)
