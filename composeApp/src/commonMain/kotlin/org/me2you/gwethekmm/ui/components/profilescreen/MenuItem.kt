@@ -1,15 +1,9 @@
 package org.me2you.gwethekmm.ui.components.profilescreen
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowForwardIos
-import androidx.compose.material.icons.filled.ArrowBackIosNew
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -47,14 +41,14 @@ fun ProfileMenuItem(icon: androidx.compose.ui.graphics.vector.ImageVector, title
         Icon(
             imageVector = Icons.AutoMirrored.Filled.ArrowForwardIos,
             contentDescription = "Arrow",
-            tint = Color.Gray,
+            tint = colorScheme.primary,
             modifier = Modifier.size(16.dp)
         )
     }
 }
 
 @Composable
-fun ProfileMenuItemNoArrows(icon: androidx.compose.ui.graphics.vector.ImageVector, title: String, onClick: () -> Unit) {
+fun CustomProfileMenuItem(icon: androidx.compose.ui.graphics.vector.ImageVector, title: String, onClick: () -> Unit, iconColor: Color?) {
     val colorScheme = MaterialTheme.colorScheme
 
     Row(
@@ -67,7 +61,7 @@ fun ProfileMenuItemNoArrows(icon: androidx.compose.ui.graphics.vector.ImageVecto
         Icon(
             imageVector = icon,
             contentDescription = title,
-            tint = colorScheme.primary,
+            tint = iconColor ?: colorScheme.primary,
             modifier = Modifier.size(24.dp)
         )
         Spacer(modifier = Modifier.width(16.dp))
@@ -78,9 +72,9 @@ fun ProfileMenuItemNoArrows(icon: androidx.compose.ui.graphics.vector.ImageVecto
             modifier = Modifier.weight(1f)
         )
         Icon(
-            imageVector = Icons.Default.ArrowBackIosNew,
+            imageVector = Icons.AutoMirrored.Filled.ArrowForwardIos,
             contentDescription = "Arrow",
-            tint = Color.Green,
+            tint = iconColor ?: colorScheme.primary,
             modifier = Modifier.size(16.dp)
         )
     }

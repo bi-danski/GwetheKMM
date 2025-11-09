@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
@@ -15,7 +16,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import org.me2you.gwethekmm.ui.theme.AccentB
-import org.me2you.gwethekmm.ui.theme.AccentG
 
 @Composable
 fun GwetheBottomNav(
@@ -26,8 +26,8 @@ fun GwetheBottomNav(
 ) {
     NavigationBar(
         modifier = Modifier
-            .clip(RoundedCornerShape(topStart = 15.dp, topEnd = 15.dp)),
-        containerColor = AccentG,
+            .clip(RoundedCornerShape(topStart = 25.dp, topEnd = 25.dp)),
+        containerColor = colorScheme.background,
         contentColor = Color.White// Purple900.copy(0.6f)
     ) {
         NavigationBarItem(

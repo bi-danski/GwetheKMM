@@ -54,13 +54,12 @@ fun GwetheTopBar(
         },
         modifier = Modifier
             .fillMaxWidth()
+            .clip( RoundedCornerShape(bottomStart = 30.dp, bottomEnd = 30.dp) )
             .height(if (isPlatformDesktop()) 80.dp else 62.dp)
             .shadow(6.dp, RoundedCornerShape(bottomStart = 0.dp, bottomEnd = 0.dp))
-            .background(//brush = Brush.horizontalGradient( colors = listOf(AccentG, AccentB)
-                AccentG
-            )
-            .clip( RoundedCornerShape(bottomStart = 0.dp, bottomEnd = 0.dp) )
+            .background(AccentG)
             .padding(8.dp),
+
         scrollBehavior = scrollBehavior,
         colors = TopAppBarDefaults.topAppBarColors(
             containerColor = AccentG.copy(0.7f),
