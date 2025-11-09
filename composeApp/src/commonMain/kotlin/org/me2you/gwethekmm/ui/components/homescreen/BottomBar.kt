@@ -22,7 +22,7 @@ import org.me2you.gwethekmm.ui.theme.AccentC
 
 @Composable
 fun GwetheBottomNav(
-    selectedIndex: Int, // <-- Added
+    selectedIndex: Int,
     onHomeClick: () -> Unit,
     onCartClick: () -> Unit,
     onProfileClick: () -> Unit
@@ -30,7 +30,6 @@ fun GwetheBottomNav(
     NavigationBar(
         modifier = Modifier
             .clip(RoundedCornerShape(topStart = 25.dp, topEnd = 25.dp)),
-
         containerColor = if (isSystemInDarkTheme()) colorScheme.background else AccentC.copy(0.8f),
         contentColor = Color.White// Purple900.copy(0.6f)
     ) {
