@@ -16,11 +16,9 @@ import androidx.compose.ui.unit.sp
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.me2you.gwethekmm.ui.components.profilescreen.CustomProfileMenuItem
 import org.me2you.gwethekmm.ui.components.profilescreen.ProfileHeader
-import org.me2you.gwethekmm.ui.components.profilescreen.ProfileMenuItem
+import org.me2you.gwethekmm.ui.theme.AccentG
 import org.me2you.gwethekmm.ui.theme.SoftLav
 
-//import androidx.navigation.NavController
-//import coil.compose.rememberAsyncImagePainter
 
 @Composable
 fun CProfileScreen(
@@ -52,20 +50,15 @@ fun CProfileScreen(
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
                         color = SoftLav
-//                        color = colorScheme.onBackground
                     )
                     Spacer(modifier = Modifier.height(20.dp))
-                    ProfileMenuItem(icon = Icons.Default.Person, title = "Personal Information", onClick = {})
-                    ProfileMenuItem(icon = Icons.AutoMirrored.Filled.List, title = "My Medical History", onClick = {})
-                    ProfileMenuItem(icon = Icons.Default.Lock, title = "Change Password", onClick = {})
-                    ProfileMenuItem(icon = Icons.Default.Language, title = "Change Language", onClick = {})
-                    ProfileMenuItem(icon = Icons.Default.Delete, title = "Delete My Account", onClick = {})
-                    ProfileMenuItem(icon = Icons.Default.AccountBalanceWallet, title = "Gwethe Wallet", onClick = {})
-                    CustomProfileMenuItem(icon = Icons.AutoMirrored.Filled.Logout,
-                        title = "Log Out",
-                        onClick = onLogOut,
-                        iconColor = Color.Red
-                        )
+                    CustomProfileMenuItem(icon = Icons.Default.Person, title = "Personal Information", onClick = {}, iconColor = AccentG)
+                    CustomProfileMenuItem(icon = Icons.AutoMirrored.Filled.List, title = "My Medical History", onClick = {}, AccentG)
+                    CustomProfileMenuItem(icon = Icons.Default.Lock, title = "Change Password", onClick = {}, iconColor = AccentG)
+                    CustomProfileMenuItem(icon = Icons.Default.Language, title = "Change Language", onClick = {}, iconColor = AccentG)
+                    CustomProfileMenuItem(icon = Icons.Default.Delete, title = "Delete My Account", onClick = {}, iconColor = AccentG)
+                    CustomProfileMenuItem(icon = Icons.Default.AccountBalanceWallet, title = "Gwethe Wallet", onClick = {},  iconColor = AccentG)
+                    CustomProfileMenuItem(icon = Icons.AutoMirrored.Filled.Logout, title = "Log Out", onClick = onLogOut, iconColor = Color.Red )
                 }
             }
         }

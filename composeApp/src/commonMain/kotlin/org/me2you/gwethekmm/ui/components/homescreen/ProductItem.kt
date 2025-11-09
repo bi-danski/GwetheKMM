@@ -41,15 +41,15 @@ fun ProductItem(
         modifier = Modifier
             .clickable { onClick(Pair(name, isFavourite)) }
             .padding(4.dp)
-            .width(if (isPlatformDesktop()) 300.dp else 150.dp)
-            .height(if (isPlatformDesktop()) 300.dp else 150.dp)
+            .width(if (isPlatformDesktop()) 280.dp else 150.dp)
+            .height(if (isPlatformDesktop()) 280.dp else 150.dp)
             .background(AccentG.copy(0.1f))
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .background(AccentG.copy(0.1f))
-                .clip(RoundedCornerShape(15.dp))
+                .clip(RoundedCornerShape(20.dp))
         ) {
             Icon(
                 imageVector = Icons.Default.ShoppingCart,
